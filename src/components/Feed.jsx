@@ -7,7 +7,7 @@ const Feed = () => {
   const [selectedCategory, setSelectedCategory] = useState('New');
 
   useEffect(() => {
-    fetchFromAPI('search?part=snippet&q=${selectedCategory}');
+    fetchFromAPI(`search?part=snippet&q=${selectedCategory}`);
   }, [selectedCategory]);
 
   return (
