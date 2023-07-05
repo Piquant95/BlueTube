@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { navigate, useNavigate } from 'react-router-dom';
 import { Paper, IconButton } from '@mui/material';
 import { Search } from '@mui/icons-material';
 
@@ -12,7 +12,7 @@ const SearchBar = () => {
         e.preventDefault();
 
         if(searchTerm) {
-            Navigate(`/search/${searchTerm}`);
+            navigate(`/search/${searchTerm}`);
 
             setSearchTerm('')
         }
