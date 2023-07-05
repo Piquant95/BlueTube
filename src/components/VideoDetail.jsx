@@ -22,7 +22,7 @@ const VideoDetail = () => {
 
   if (!videoDetail?.snippet) return 'Loading...';
 
-  const { snippet: { title, channlelID, channelTitle }, statistics: { viewCount, likeCount } } = videoDetail;
+  const { snippet: { title, channelId, channelTitle }, statistics: { viewCount, likeCount } } = videoDetail;
 
   return (
     <Box minHeight="95vh">
@@ -31,15 +31,15 @@ const VideoDetail = () => {
           <Box sx={{ width: '100%', position: 'sticky', top: '86px' }}>
             <ReactPlayer url={`https://www.youtube.com/watch?v=${id}`}
             className="react-player" controls />
-            <Typography color="#fff" variant="h5" fontweight="bold" p={2}>
+            <Typography color="#fff" variant="h5" fontWeight="bold" p={2}>
               {title}
             </Typography>
             <Stack direction="row" justifyContent="space-between" sx={{
               color: '#fff' }} py={1} px={2}>
-                <Link to={`/channel/${channlelID}`}>
-                  <Typography variant={{ sm: 'subtitle1', md: 'h6' }} color="#fff">
+                <Link to={`/channel/${channelId}`}>
+                  <Typography variant= 'h6' color="#fff">
                     {channelTitle}
-                    <CheckCircle  sx={{ fontSize: '12px', color: 'gray', ml: '5px'}} />
+                    <CheckCircle  sx={{ fontSize: '14px', color: 'blue', ml: '5px'}} />
                   </Typography>
                 </Link>
                 <Stack direction="row" gap="20px" alignItems="center">
