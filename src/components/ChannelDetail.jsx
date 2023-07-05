@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Box } from '@mui/material';
 
@@ -7,11 +7,9 @@ import { fetchFromAPI } from '../utils/fetchFromAPI';
 
 const ChannelDetail = () => {
   const [channelDetail, setChannelDetail] = useState(null)
-  const [ videos, setVideos] = useState([])
+  const [ videos, setVideos] = useState([]);
 
   const { id } = useParams();
-
-  console.log(channelDetail, videos)
 
   useEffect(() => {
     fetchFromAPI(`channels?part=snippet&id=${id}`)
